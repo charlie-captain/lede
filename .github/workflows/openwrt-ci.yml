@@ -61,6 +61,7 @@ jobs:
           ./scripts/feeds install -a
       - name: Generate configuration file
         run: |
+          echo ${{github.events}}
           make defconfig
           cat ./.config
 #           rm -f ./.config*
